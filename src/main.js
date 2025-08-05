@@ -1,3 +1,8 @@
+/*
+Copyright 2025 Elia Medeot
+This file is part of TEXTURE GENERATOR 01 and is released under the MIT License.
+*/
+
 import GUI from 'https://cdn.jsdelivr.net/npm/lil-gui@0.20/+esm';
 import { Context, Element } from 'https://cdn.jsdelivr.net/npm/svgcanvas@2.6.0/+esm';
 
