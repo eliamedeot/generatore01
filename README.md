@@ -1,2 +1,2 @@
-# Generatoree di Texture 01
+# Generatore di Texture 01
 
