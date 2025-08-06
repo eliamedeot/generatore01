@@ -1,6 +1,6 @@
 /*
 Copyright 2025 Elia Medeot
-This file is part of TEXTURE GENERATOR 01 and is released under the MIT License.
+This file is part of GENERATORE DI TEXTURE 01 and is released under the MIT License.
 */
 
 import GUI from 'https://cdn.jsdelivr.net/npm/lil-gui@0.20/+esm';
@@ -102,8 +102,8 @@ function initializeSVGContext() {
 
 // Adding parameters to UI
 gui.open();
-gui.add(params, 'tilesX', 10, 400).step(1).name('Tiles X').onChange(updateMosaic);
-gui.add(params, 'tilesY', 10, 400).step(1).name('Tiles Y').onChange(updateMosaic);
+gui.add(params, 'tilesX', 2, 400).step(1).name('Tiles X').onChange(updateMosaic);
+gui.add(params, 'tilesY', 2, 400).step(1).name('Tiles Y').onChange(updateMosaic);
 // gui.add(params, 'minH', 0, 100).step(1).name('Minimum Height').onChange(updateMosaic);
 // gui.add(params, 'maxH', 0, 100).step(1).name('Maximum Height').onChange(updateMosaic);
 const minHController = gui.add(params, 'minH', 0, params.maxH).step(1).name('Minimum Height').onChange(updateMosaic);
@@ -117,11 +117,11 @@ maxHController.onChange(function (value) {
 });
 
 gui.addColor(params, 'color').name('Tiles Color').onChange(updateMosaic);
-gui.add(params, 'showImageColor').name('Show Image Colors').onChange(updateMosaic);
+gui.add(params, 'showImageColor').name('Use Image Colors').onChange(updateMosaic);
 gui.addColor(params, 'colorBG').name('Background').onChange(updateMosaic);
 gui.add(params, 'filterBG').name('Transparent BG').onChange(updateMosaic);
 gui.add(params, 'invertFilter').name('Invert').onChange(updateMosaic);
-gui.add(params, 'showReferenceImage').name('Show Image').onChange(updateMosaic);
+gui.add(params, 'showReferenceImage').name('Show Reference Image').onChange(updateMosaic);
 gui.add(params, 'imageLoader').name('Load Image');
 gui.add(params, 'imageDownloader').name('Download SVG');
 
@@ -186,8 +186,8 @@ function updateMosaic() {
   for (let x = 0; x < params.tilesX; x++) {
     for (let y = 0; y < params.tilesY; y++) {
       // Mapping the tile coordinates to the filter's canvas coordinates
-      let imgX = map(x, 0, params.tilesX, 0, filterCanvas.width);
-      let imgY = map(y, 0, params.tilesY, 0, filterCanvas.height);
+      let imgX = map(x, 0, params.tilesX, 0, filterCanvas.width) + tileW / 2;
+      let imgY = map(y, 0, params.tilesY, 0, filterCanvas.height) + tileH / 2;
 
       // Get the pixel data from the image
       const pixelData = imageContext.getImageData(imgX, imgY, 1, 1).data;

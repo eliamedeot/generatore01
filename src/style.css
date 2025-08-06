@@ -1,6 +1,6 @@
 /*
 Copyright 2025 Elia Medeot
-This file is part of TEXTURE GENERATOR 01 and is released under the MIT License.
+This file is part of GENERATORE DI TEXTURE 01 and is released under the MIT License.
 */
 
 html,
@@ -42,7 +42,7 @@ p {
 a {
   color: dimgray;
   font-family: "DM Sans", sans-serif;
-  font-weight: 900;
+  font-weight: 450;
   font-style: normal;
   text-transform: capitalize;
   text-decoration: none;
@@ -61,9 +61,10 @@ a {
   --string-color: gray;
 
   --widget-border-radius: 1rem;
+  --widget-height: 1.5rem;
   --width: 100%;
   --padding: 0;
-  --spacing: 0.5rem;
+  --spacing: 0.75rem;
 
   --name-width: 40%;
   --font-size: 1rem;
@@ -96,10 +97,4 @@ a {
   font-weight: 450;
   font-style: normal;
   text-transform: capitalize;
-}
-
-.lil-gui slider {
-  width: 16px;
-  height: 16px;
-  background-color: white;
 }
