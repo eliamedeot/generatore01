@@ -105,7 +105,7 @@ gui.add(params, 'tilesY', 1, 400).step(1).name('Tiles Y').onChange(updateMosaic)
 // gui.add(params, 'maxH', 0, 100).step(1).name('Maximum Height').onChange(updateMosaic);
 const minHController = gui.add(params, 'minH', 0, params.maxH).step(1).name('Minimum Height').onChange(updateMosaic);
 const maxHController = gui.add(params, 'maxH', 0, 1000).step(1).name('Maximum Height').onChange(updateMosaic);
-gui.add(params, 'direction', ['Horizontal', 'Vertical']).onChange(updateMosaic);
+gui.add(params, 'direction', ['Horizontal', 'Vertical']).name('Direction').onChange(updateMosaic);
 maxHController.onChange(function (value) {
   minHController.max(value);
   if (params.minH > value) minHController.setValue(value);
